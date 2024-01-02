@@ -1,0 +1,15 @@
+pertama     admin input data pelanggan = nama,alamat,nohp(semua wajib)
+
+kedua       admin input data kendaraan pelanggan = (wajib : id, pelanggan id) (tidak wajib : nama_kendaraan,tahun_kendaraan,plat_kendaraan)
+            note : kalau hendak menggunakan repaint wajib mengisi semua data namun jika hanya carbon tidak wajib
+
+ketiga      admin memilih jasa yang ingin digunakan customer lalu print detail part dan harga
+            Repaint : admin mengisi semua form repaint
+            Carbon  : admin mengisi form carbon sesuai dengan kebutuhan customer
+
+keempat     admin mengisi form rincian jasa 
+            jenis_jasa      : jasa yang digunakan
+            tanggal_dibuat  : kapan rincian jasa telah telah dibuat
+            mengisi tanggal_diterima ketika barang sudah diserahkan oleh customer ke admin
+            mengisi estimasi_siap dan status_pengerjaan (On Progress,On Finishing, Repairing, Dll)
+            mengisi status_barang(Belum Siap jika masih On Progress) (Siap jika sudah siap Untuk Diambil Customer)
