@@ -67,7 +67,9 @@ class KendaraanPelangganController extends Controller
     public function actionCreate()
     {
         $model = new KendaraanPelanggan();
+
         $namaPelanggan = Pelanggan::getAllPelanggan();
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }

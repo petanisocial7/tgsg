@@ -3,6 +3,8 @@
 namespace app\controllers;
 
 use Yii;
+use app\models\KendaraanPelanggan;
+use app\models\Pelanggan;
 use app\models\Repaint;
 use app\models\search\RepaintSearch;
 use yii\web\Controller;
@@ -66,12 +68,17 @@ class RepaintController extends Controller
     {
         $model = new Repaint();
 
+        $namaPelanggan = Pelanggan::getAllPelanggan();
+        $namaKendaraan = KendaraanPelanggan::getAllKendaraanPelanggan();
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('create', [
             'model' => $model,
+            'namaPelanggan' => $namaPelanggan,
+            'namaKendaraan' => $namaKendaraan
         ]);
     }
 

@@ -5,6 +5,7 @@ use app\models\KendaraanPelanggan;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use kartik\select2\Select2;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Repaint */
@@ -22,17 +23,28 @@ use yii\widgets\ActiveForm;
             <div class="row">
 
                 <div class="col-md-3">
-                    <?php $array = KendaraanPelanggan::find()->all(); ?>
-                    <?= $form->field($model, 'kendaraan_pelanggan_id')->dropDownList(ArrayHelper::map($array, 'pelanggan_id', function ($model) {
-                        return $model->pelanggan_id . ". " . $model->nama_kendaraan;
-                    })) ?>
+                    <?= $form->field($model, 'kendaraan_pelanggan_id')->widget(Select2::classname(), [
+                        'data' => $namaKendaraan,
+                        'options' => ['placeholder' => ''],
+                        'theme' => Select2::THEME_BOOTSTRAP,
+                        'pluginOptions' => [
+                            'allowClear' => true
+                        ],
+                    ]);
+                    ?>
                 </div>
 
+
                 <div class="col-md-2">
-                    <?php $array = Pelanggan::find()->all(); ?>
-                    <?= $form->field($model, 'pelanggan_id')->dropDownList(ArrayHelper::map($array, 'id', function ($model) {
-                        return $model->id . ". " . $model->nama_pelanggan;
-                    })) ?>
+                    <?= $form->field($model, 'pelanggan_id')->widget(Select2::classname(), [
+                        'data' => $namaPelanggan,
+                        'options' => ['placeholder' => ''],
+                        'theme' => Select2::THEME_BOOTSTRAP,
+                        'pluginOptions' => [
+                            'allowClear' => true
+                        ],
+                    ]);
+                    ?>
                 </div>
 
                 <div class="col-md-4">

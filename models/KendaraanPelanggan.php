@@ -98,10 +98,10 @@ class KendaraanPelanggan extends \yii\db\ActiveRecord
         return $this->hasMany(RincianJasa::className(), ['kendaraan_pelanggan_id' => 'id']);
     }
 
-    public static function getAllPelanggan()
+    public static function getAllKendaraanPelanggan()
     {
-        $pelanggan = Pelanggan::find()->all();
-        $pelanggan = ArrayHelper::map($pelanggan, 'id', 'nama_pelanggan');
-        return $pelanggan;
+        $kendaraan_pelanggan = KendaraanPelanggan::find()->all();
+        $kendaraan_pelanggan = ArrayHelper::map($kendaraan_pelanggan, 'id', 'nama_kendaraan');
+        return $kendaraan_pelanggan;
     }
 }
