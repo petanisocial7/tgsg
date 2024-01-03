@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "kendaraan_pelanggan".
@@ -95,5 +96,12 @@ class KendaraanPelanggan extends \yii\db\ActiveRecord
     public function getRincianJasas()
     {
         return $this->hasMany(RincianJasa::className(), ['kendaraan_pelanggan_id' => 'id']);
+    }
+
+    public static function getAllPelanggan()
+    {
+        $pelanggan = Pelanggan::find()->all();
+        $pelanggan = ArrayHelper::map($pelanggan, 'id', 'nama_pelanggan');
+        return $pelanggan;
     }
 }

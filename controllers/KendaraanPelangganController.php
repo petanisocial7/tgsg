@@ -4,10 +4,12 @@ namespace app\controllers;
 
 use Yii;
 use app\models\KendaraanPelanggan;
+use app\models\Pelanggan;
 use app\models\search\KendaraanPelangganSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
 
 /**
  * KendaraanPelangganController implements the CRUD actions for KendaraanPelanggan model.
@@ -65,13 +67,14 @@ class KendaraanPelangganController extends Controller
     public function actionCreate()
     {
         $model = new KendaraanPelanggan();
-
+        $namaPelanggan = Pelanggan::getAllPelanggan();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('create', [
             'model' => $model,
+            'namaPelanggan' => $namaPelanggan
         ]);
     }
 

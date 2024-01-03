@@ -1,8 +1,6 @@
 <?php
 
-use app\models\Pelanggan;
-use app\models\KendaraanPelanggan;
-use yii\helpers\ArrayHelper;
+use kartik\select2\Select2;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -32,17 +30,17 @@ use yii\widgets\ActiveForm;
                         <div class="x_content">
 
                             <div class="col-md-6">
-                                <?php $array = KendaraanPelanggan::find()->all(); ?>
-                                <?= $form->field($model, 'kendaraan_pelanggan_id')->dropDownList(ArrayHelper::map($array, 'pelanggan_id', function ($model) {
-                                    return $model->pelanggan_id . ". " . $model->nama_kendaraan;
-                                })) ?>
+                                <?= $form->field($model, 'kendaraan_pelanggan_id')->textInput([
+                                    'maxlength' => true,
+                                    'placeholder' => 'cth: Yamaha Xmax 250'
+                                ]) ?>
                             </div>
 
                             <div class="col-md-6">
-                                <?php $array = Pelanggan::find()->all(); ?>
-                                <?= $form->field($model, 'pelanggan_id')->dropDownList(ArrayHelper::map($array, 'id', function ($model) {
-                                    return $model->id . ". " . $model->nama_pelanggan;
-                                })) ?>
+                                <?= $form->field($model, 'pelanggan_id')->textInput([
+                                    'maxlength' => true,
+                                    'placeholder' => 'cth: Yamaha Xmax 250'
+                                ]) ?>
                             </div>
 
                             <div class="col-md-6">
@@ -65,9 +63,16 @@ use yii\widgets\ActiveForm;
                         <div class="x_content">
                             <?= $form->field($model, 'nama_part')->textInput(['maxlength' => true]) ?>
 
-                            <?= $form->field($model, 'jenis_motif')->textInput(['maxlength' => true]) ?>
+                            <?= $form->field($model, 'jenis_motif')->widget(Select2::classname(), [
+                                'data' => $jenisMotif,
+                                'options' => ['placeholder' => 'Silahkan Pilih Motif'],
+                                'pluginOptions' => [
+                                    'allowClear' => true
+                                ],
+                            ]);
+                            ?>
 
-                            <?= $form->field($model, 'harga_motif')->textInput() ?>
+                            <?= $form->field($model, 'harga_motif')->textInput(['type' => 'number']) ?>
 
                             <?= $form->field($model, 'panjang_part')->textInput() ?>
 

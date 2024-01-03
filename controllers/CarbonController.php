@@ -66,12 +66,15 @@ class CarbonController extends Controller
     {
         $model = new Carbon();
 
+        $jenisMotif = Carbon::JENIS_MOTIF;
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('create', [
             'model' => $model,
+            'jenisMotif' => $jenisMotif
         ]);
     }
 
