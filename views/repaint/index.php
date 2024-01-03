@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="repaint-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?= Html::encode($this->title)?></h1>
 
     <p>
         <?= Html::a('Create Repaint', ['create'], ['class' => 'btn btn-success']) ?>
