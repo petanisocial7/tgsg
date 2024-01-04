@@ -27,6 +27,7 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
         'custom/vendors/switchery/dist/switchery.min.js',
+        'js/harga.js'
     ];
     public $depends = [
         'yiister\gentelella\assets\ThemeAsset',

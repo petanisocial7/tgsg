@@ -3,6 +3,8 @@
 namespace app\controllers;
 
 use Yii;
+use app\models\KendaraanPelanggan;
+use app\models\Pelanggan;
 use app\models\Carbon;
 use app\models\search\CarbonSearch;
 use yii\web\Controller;
@@ -66,6 +68,9 @@ class CarbonController extends Controller
     {
         $model = new Carbon();
 
+        $namaPelanggan = Pelanggan::getAllPelanggan();
+        $namaKendaraan = KendaraanPelanggan::getAllKendaraanPelanggan();
+
         $jenisMotif = Carbon::JENIS_MOTIF;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -74,7 +79,9 @@ class CarbonController extends Controller
 
         return $this->render('create', [
             'model' => $model,
-            'jenisMotif' => $jenisMotif
+            'jenisMotif' => $jenisMotif,
+            'namaPelanggan' => $namaPelanggan,
+            'namaKendaraan' => $namaKendaraan
         ]);
     }
 

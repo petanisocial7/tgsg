@@ -30,17 +30,27 @@ use yii\widgets\ActiveForm;
                         <div class="x_content">
 
                             <div class="col-md-6">
-                                <?= $form->field($model, 'kendaraan_pelanggan_id')->textInput([
-                                    'maxlength' => true,
-                                    'placeholder' => 'cth: Yamaha Xmax 250'
-                                ]) ?>
+                                <?= $form->field($model, 'kendaraan_pelanggan_id')->widget(Select2::classname(), [
+                                    'data' => $namaKendaraan,
+                                    'options' => ['placeholder' => ''],
+                                    'theme' => Select2::THEME_BOOTSTRAP,
+                                    'pluginOptions' => [
+                                        'allowClear' => true
+                                    ],
+                                ]);
+                                ?>
                             </div>
 
                             <div class="col-md-6">
-                                <?= $form->field($model, 'pelanggan_id')->textInput([
-                                    'maxlength' => true,
-                                    'placeholder' => 'cth: Yamaha Xmax 250'
-                                ]) ?>
+                                <?= $form->field($model, 'pelanggan_id')->widget(Select2::classname(), [
+                                    'data' => $namaPelanggan,
+                                    'options' => ['placeholder' => ''],
+                                    'theme' => Select2::THEME_BOOTSTRAP,
+                                    'pluginOptions' => [
+                                        'allowClear' => true
+                                    ],
+                                ]);
+                                ?>
                             </div>
 
                             <div class="col-md-6">
@@ -54,7 +64,8 @@ use yii\widgets\ActiveForm;
                     </div>
                 </div>
 
-                <div class="col-md-6 col-sm-6">
+
+                <div class="col-md-4 col-sm-4">
                     <div class="x_panel">
                         <div class="x_title">
                             <h2 style="width:100%;text-align:center;">Carbon Part 1</h2>
@@ -83,7 +94,7 @@ use yii\widgets\ActiveForm;
                     </div>
                 </div>
 
-                <div class="col-md-6 col-sm-6">
+                <div class="col-md-4 col-sm-4">
                     <div class="x_panel">
                         <div class="x_title">
                             <h2 style="width:100%;text-align:center;">Carbon Part 2</h2>
@@ -105,7 +116,7 @@ use yii\widgets\ActiveForm;
                     </div>
                 </div>
 
-                <div class="col-md-6 col-sm-6">
+                <div class="col-md-4 col-sm-4">
                     <div class="x_panel">
                         <div class="x_title">
                             <h2 style="width:100%;text-align:center;">Carbon Part 3</h2>
@@ -127,7 +138,7 @@ use yii\widgets\ActiveForm;
                     </div>
                 </div>
 
-                <div class="col-md-6 col-sm-6">
+                <div class="col-md-4 col-sm-4">
                     <div class="x_panel">
                         <div class="x_title">
                             <h2 style="width:100%;text-align:center;">Carbon Part 4</h2>
@@ -149,7 +160,7 @@ use yii\widgets\ActiveForm;
                     </div>
                 </div>
 
-                <div class="col-md-6 col-sm-6">
+                <div class="col-md-4 col-sm-4">
                     <div class="x_panel">
                         <div class="x_title">
                             <h2 style="width:100%;text-align:center;">Carbon Part 5</h2>
@@ -172,7 +183,7 @@ use yii\widgets\ActiveForm;
                     </div>
                 </div>
 
-                <div class="col-md-6 col-sm-6">
+                <div class="col-md-4 col-sm-4">
                     <div class="x_panel">
                         <div class="x_title">
                             <h2 style="width:100%;text-align:center;">Carbon Part 6</h2>
@@ -194,7 +205,7 @@ use yii\widgets\ActiveForm;
                     </div>
                 </div>
 
-                <div class="col-md-6 col-sm-6">
+                <div class="col-md-4 col-sm-4">
                     <div class="x_panel">
                         <div class="x_title">
                             <h2 style="width:100%;text-align:center;">Carbon Part 7</h2>
@@ -216,7 +227,7 @@ use yii\widgets\ActiveForm;
                     </div>
                 </div>
 
-                <div class="col-md-6 col-sm-6">
+                <div class="col-md-4 col-sm-4">
                     <div class="x_panel">
                         <div class="x_title">
                             <h2 style="width:100%;text-align:center;">Carbon Part 8</h2>
@@ -238,7 +249,7 @@ use yii\widgets\ActiveForm;
                     </div>
                 </div>
 
-                <div class="col-md-6 col-sm-6">
+                <div class="col-md-4 col-sm-4">
                     <div class="x_panel">
                         <div class="x_title">
                             <h2 style="width:100%;text-align:center;">Carbon Part 9</h2>
@@ -260,7 +271,7 @@ use yii\widgets\ActiveForm;
                     </div>
                 </div>
 
-                <div class="col-md-6 col-sm-6">
+                <div class="col-md-4 col-sm-4">
                     <div class="x_panel">
                         <div class="x_title">
                             <h2 style="width:100%;text-align:center;">Carbon Part 10</h2>
@@ -286,7 +297,9 @@ use yii\widgets\ActiveForm;
 
                 <div class="ln_solid"></div>
                 <div class="form-group">
-                    <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+                    <div class="col-md-4 col-sm-4">
+                        <?= Html::submitButton('Simpan', ['class' => 'btn btn-success']) ?>
+                    </div>
                 </div>
 
                 <?php ActiveForm::end(); ?>

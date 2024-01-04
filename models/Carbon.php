@@ -80,10 +80,30 @@ class Carbon extends \yii\db\ActiveRecord
 {
 
     const JENIS_MOTIF = [
-        'Twill 220 gsm' => 'Twill 220 gsm', 'Twill 240 gsm' => 'Twill 240 gsm', 'Twill 260 gsm' =>
-        'Twill 260 gsm', 'Twill Reflective Blue' => 'Twill Reflective Blue', 'Twill Reflective Red' => 'Twill Reflective Red', 'Twill Reflective Purple' => 'Twill Reflective Purple', 'Twill Reflective Green' => 'Twill Reflective Green',
-        'Forged Chopped Mix Blue' => 'Forged Chopped Mix Blue', 'Forged Chopped Red' => 'Forged Chopped Red', 'Forged Chopped Purple' => 'Forged Chopped Purple'
+        'Twill' => [
+            'Twill 220 gsm' => 'Twill 220 gsm',
+            'Twill 240 gsm' => 'Twill 240 gsm',
+            'Twill 260 gsm' => 'Twill 260 gsm',
+        ],
+        'Twill Reflective' => [
+            'Twill Reflective Blue' => 'Twill Reflective Blue',
+            'Twill Reflective Red' => 'Twill Reflective Red',
+            'Twill Reflective Purple' => 'Twill Reflective Purple',
+            'Twill Reflective Green' => 'Twill Reflective Green',
+        ],
+        'Forged Chopped' => [
+            'Forged Chopped Mix Blue' => 'Forged Chopped Mix Blue',
+            'Forged Chopped Red' => 'Forged Chopped Red',
+            'Forged Chopped Purple' => 'Forged Chopped Purple',
+            'Forged Chopped Green' => 'Forged Chopped Green',
+        ],
     ];
+
+    // const JENIS_MOTIF = [
+    //     'twill' => [
+    //         'Twill 220 gsm' => 'Twill 220 gsm',
+    //     ]
+    // ];
 
     /**
      * {@inheritdoc}
