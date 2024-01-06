@@ -19,6 +19,7 @@ class RepaintController extends Controller
     /**
      * {@inheritdoc}
      */
+
     public function behaviors()
     {
         return [
