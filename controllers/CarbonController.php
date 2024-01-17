@@ -95,6 +95,9 @@ class CarbonController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $namaPelanggan = Pelanggan::getAllPelanggan();
+        $namaKendaraan = KendaraanPelanggan::getAllKendaraanPelanggan();
+        $jenisMotif = Carbon::JENIS_MOTIF;
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -102,6 +105,9 @@ class CarbonController extends Controller
 
         return $this->render('update', [
             'model' => $model,
+            'jenisMotif' => $jenisMotif,
+            'namaPelanggan' => $namaPelanggan,
+            'namaKendaraan' => $namaKendaraan
         ]);
     }
 

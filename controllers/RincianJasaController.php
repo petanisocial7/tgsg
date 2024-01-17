@@ -92,6 +92,8 @@ class RincianJasaController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $namaPelanggan = Pelanggan::getAllPelanggan();
+        $namaKendaraan = KendaraanPelanggan::getAllKendaraanPelanggan();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -99,6 +101,8 @@ class RincianJasaController extends Controller
 
         return $this->render('update', [
             'model' => $model,
+            'namaPelanggan' => $namaPelanggan,
+            'namaKendaraan' => $namaKendaraan
         ]);
     }
 

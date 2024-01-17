@@ -77,7 +77,7 @@ use kartik\select2\Select2;
 
                 <div class="col-md-6">
                     <?= $form->field($model, 'total_biaya')->textInput([
-                        'readonly' => true,
+                        'maxlength' => true,
                         'placeholder' => 'cth: Full Body Halus'
                     ]) ?>
                 </div>

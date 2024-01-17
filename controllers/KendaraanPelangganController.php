@@ -90,6 +90,7 @@ class KendaraanPelangganController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $namaPelanggan = Pelanggan::getAllPelanggan();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -97,6 +98,7 @@ class KendaraanPelangganController extends Controller
 
         return $this->render('update', [
             'model' => $model,
+            'namaPelanggan' => $namaPelanggan
         ]);
     }
 

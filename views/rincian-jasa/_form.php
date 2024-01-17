@@ -19,7 +19,7 @@ use kartik\select2\Select2;
             <?php $form = ActiveForm::begin(); ?>
             <div class="row">
 
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <?= $form->field($model, 'kendaraan_pelanggan_id')->widget(Select2::classname(), [
                         'data' => $namaKendaraan,
                         'options' => ['placeholder' => ''],
@@ -31,7 +31,7 @@ use kartik\select2\Select2;
                     ?>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <?= $form->field($model, 'pelanggan_id')->widget(Select2::classname(), [
                         'data' => $namaPelanggan,
                         'options' => ['placeholder' => ''],
@@ -43,7 +43,7 @@ use kartik\select2\Select2;
                     ?>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <?= $form->field($model, 'jenis_jasa')->widget(Select2::classname(), [
                         'data' => ['Repaint' => 'Repaint', 'Carbon' => 'Carbon'],
                         'options' => ['placeholder' => ''],
@@ -60,15 +60,15 @@ use kartik\select2\Select2;
                     <?= $form->field($model, 'tanggal_dibuat')->textInput() ?>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <?= $form->field($model, 'tanggal_diterima')->textInput() ?>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <?= $form->field($model, 'estimasi_siap')->textInput() ?>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <?= $form->field($model, 'status_pengerjaan')->textInput(['maxlength' => true]) ?>
                 </div>
 
