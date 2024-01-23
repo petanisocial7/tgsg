@@ -64,6 +64,10 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+    public function actionMedia()
+    {
+        return $this->render('media');
+    }
     /**
      * Login action.
      *

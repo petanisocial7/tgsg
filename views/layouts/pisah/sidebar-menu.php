@@ -7,6 +7,7 @@
             [
                 "items" => [
                     ["label" => "Home", "url" => "index.html", "icon" => "home"],
+                    ["label" => "Media", "url" => ["site/media"], "icon" => "bookmark"],
                     ["label" => "Pelanggan", "url" => ["pelanggan/index"], "icon" => "user"],
                     ["label" => "Kendaraan Pelanggan", "url" => ["kendaraan-pelanggan/index"], "icon" => "car"],
                     ["label" => "Repaint", "url" => ["repaint/index"], "icon" => "paint-brush"],
